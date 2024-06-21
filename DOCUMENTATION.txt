@@ -1,0 +1,72 @@
+# Scientific Calculator Documentation
+
+## Overview
+
+This scientific calculator is a single-page application (SPA) built using React. It provides a comprehensive set of arithmetic and scientific functions, along with features like memory storage, history tracking, dark/light mode, and a confetti explosion effect for specific calculations.
+
+## Architecture
+
+### Components
+
+The project is structured with a component-based architecture. The primary components are:
+
+1. **App**: The main component that renders the calculator interface and manages the overall layout.
+2. **AppContainer**: The container component that manages the state and logic of the calculator.
+3. **Button**: A reusable button component used for the calculator keys.
+4. **Display**: A component to show the current input, operation, or result.
+5. **History**: A component to display past calculations.
+
+### State Management
+
+State management is handled using React's `useState` hook within the `AppContainer` component. The state variables include:
+
+- `displayValue`: The value currently shown on the calculator display.
+- `currentOutput`: The current result of operations.
+- `currentOperation`: The current arithmetic or scientific operation.
+- `resetDisplayValueOnNextKeyPress`: A flag to reset the display value on the next keypress.
+- `mode`: The mode of the calculator (e.g., scientific).
+- `trigUnit`: The unit for trigonometric calculations (degrees or radians).
+- `memory`: The memory storage value.
+- `isExploding`: A flag to trigger the confetti explosion effect.
+- `theme`: The current theme (dark or light).
+- `history`: An array to store past calculations.
+
+### Utility Functions
+
+Several utility functions are used to handle different types of key presses:
+
+- **handleNumberKey**: Handles number and decimal key presses.
+- **handleConstantKey**: Handles key presses for mathematical constants.
+- **handleBinaryOperationKey**: Manages binary operations (e.g., addition, subtraction).
+- **handleUnaryOperationKey**: Manages unary operations (e.g., trigonometric functions).
+- **handleEqualsKey**: Computes the result of the current operation.
+- **handleClearKey**: Clears the current input and resets the calculator.
+- **handleFunctionKey**: Handles miscellaneous functions like memory operations and random number generation.
+- **handleClick**: A general handler that maps key types to their respective handlers.
+
+### Design Decisions
+
+1. **React for UI**: React was chosen for its component-based architecture, which allows for modular and reusable code, and for its state management capabilities, which simplify managing the calculator's various states.
+
+2. **Decimal.js for Precision**: The `Decimal.js` library is used to handle calculations with arbitrary precision, which is crucial for scientific calculations where floating-point precision is important.
+
+3. **Confetti Explosion**: The `react-confetti-explosion` library adds a fun and engaging element to the user experience by providing a confetti animation for specific calculations (e.g., 5 + 6 or 6 + 5).
+
+4. **Dark/Light Mode**: The inclusion of a theme toggle improves accessibility and user experience, allowing users to switch between dark and light modes based on their preference.
+
+5. **Responsive Design**: The layout and design of the calculator are responsive, ensuring it works well on various devices, from desktops to mobile phones.
+
+### File Structure
+
+- **src/components**: Contains reusable UI components (`Button`, `Display`, etc.).
+- **src/containers**: Contains container components (`AppContainer.js`) that handle the state and logic.
+- **src/constants**: Contains constant definitions (`keypads.js`) for the calculator keys.
+- **src/utils**: Contains utility functions and custom configurations (`decimal-custom.js`).
+- **src/index.js**: The entry point for the React application.
+
+### Future Enhancements
+
+- **Advanced Functions**: Add more scientific functions like hyperbolic trigonometric functions, factorial, etc.
+- **User Preferences**: Save user preferences for themes and trig units in local storage.
+- **Keyboard Support**: Enhance usability by adding support for keyboard inputs.
+- **Improved UI/UX**: Further refine the user interface and experience based on user feedback.
