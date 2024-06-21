@@ -1,0 +1,87 @@
+/* On mobile screens, the calculator should fill the entire viewport.
+On larger screens, there is a fixed width/height.
+@todo - Check current browser support for vw/vh units  */
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.calculator.basic {
+  height: 400px;
+  width: 290px;
+}
+
+.calculator.scientific {
+  height: 400px;
+  width: 700px;
+}
+
+@media (max-width: 450px),
+(max-width: 740px) and (max-height: 450px) {
+  .calculator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+.app-container {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+/* Add this to your CSS file */
+
+.app-container {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+/* Optional: Additional styles for the toggle button */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

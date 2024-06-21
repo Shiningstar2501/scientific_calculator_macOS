@@ -1,0 +1,84 @@
+.Keypad {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 2.5 1 0;
+
+}
+
+.Keypad-row {
+  display: flex;
+  flex: 1 0 20%;
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six,
+#seven,
+#eight,
+#nine,
+#zero,
+#decimal {
+  /* Specify your styles here */
+  background-color: #505050;
+  color: white;
+  border: 1px solid rgb(37, 37, 37);
+}
+
+#openParenthesis,
+#closeParenthesis,
+#memoryClear,
+#memoryAdd,
+#memorySubtract,
+#memoryRecall,
+#clear,
+#neg,
+#percent,
+#alt,
+#square,
+#cube,
+#pow,
+#eToXPower,
+#tenToXPower,
+#inverse,
+#sqrt,
+#cbrt,
+#nthRoot,
+#ln,
+#log,
+#factorial,
+#sin,
+#cos,
+#tan,
+#E,
+#toExponential,
+#trigUnit,
+#sinh,
+#cosh,
+#tanh,
+#PI,
+#random {
+  background-color: #383837;
+  color: white;
+  border: 1px solid rgb(37, 37, 37);
+
+}
+
+.keypad>.Keypad-row>button:active {
+  background-color: aquamarine;
+}
+
+.Keypad-row:last-of-type {
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+}
+
+@media (max-width: 450px),
+(max-width: 740px) and (max-height: 450px) {
+  .Keypad-row:last-of-type {
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,74 @@
+/* The height and width of the keys is set with flexbox */
+.Key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 25%;
+  align-self: stretch;
+  border-style: solid;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  background: #e5e5ea;
+  border-color: rgba(84, 77, 77, 0.25);
+  color: #6a6767;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.Key.number {
+  background: #ededf3;
+}
+
+.Key:last-of-type {
+  border-right-width: 0;
+}
+
+/* Keys with special styles
+-----------------------------------------------*/
+#zero {
+  flex: 2 0 50%;
+  /* The zero is twice the width of other keys */
+}
+
+.Key:last-of-type .Key-label {
+  /* Basic operation keys: add, subtract, multiply, divide, equals */
+  font-size: 130%;
+}
+
+#clear .Key-label {
+  font-size: 86%;
+}
+
+.Key.number .Key-label {
+  font-size: 110%;
+}
+
+.Key:last-of-type {
+  background: #f59330;
+  color: #fff;
+}
+
+/* Active state for regular keys */
+.Key:active,
+.Key.active {
+  opacity: 85%;
+}
+
+.Key:last-of-type:active,
+.Key:last-of-type.active {
+  background: linear-gradient(to left, #db944c, #ed9c4a);
+}
+
+/* Styles for scientific mode
+-----------------------------------------------*/
+.scientific .Key {
+  flex: 1 1 10%;
+  font-size: 17px;
+  border-color: rgba(84, 77, 77, 0.17);
+}
+
+.calculator.scientific #zero {
+  flex: 2 0 20%;
+}
